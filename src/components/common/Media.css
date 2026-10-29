@@ -1,0 +1,43 @@
+.media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--tone-bg);
+  color: var(--tone-ink);
+}
+.media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.media__art {
+  width: min(44%, 220px);
+  height: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.9;
+  stroke-linejoin: round;
+  opacity: 0.85;
+  transition: transform 0.8s var(--ease);
+}
+.media::after {
+  /* soft studio light */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 80% at 30% 20%, rgba(255, 255, 255, 0.55), transparent 60%);
+  pointer-events: none;
+}
+
+.media--gold   { --tone-bg: linear-gradient(160deg, #f4ead6, #e6d3ad); --tone-ink: #9a7a3c; }
+.media--silver { --tone-bg: linear-gradient(160deg, #f1f2f4, #d9dce1); --tone-ink: #6f7680; }
+.media--rose   { --tone-bg: linear-gradient(160deg, #f7e7df, #ecc9b9); --tone-ink: #a2664e; }
+.media--cream  { --tone-bg: linear-gradient(160deg, #faf6ef, #ece3d3); --tone-ink: #9b8562; }
+.media--blush  { --tone-bg: linear-gradient(160deg, #f8ece9, #ead3cf); --tone-ink: #a06c66; }
+.media--dark   { --tone-bg: linear-gradient(160deg, #2b2a28, #141414); --tone-ink: #c8a96a; }
+.media--dark::after { background: radial-gradient(120% 80% at 30% 20%, rgba(255, 255, 255, 0.08), transparent 60%); }

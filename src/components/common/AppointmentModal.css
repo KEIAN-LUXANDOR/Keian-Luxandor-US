@@ -1,0 +1,6 @@
+.appt__form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.appt__intro { grid-column: 1 / -1; text-align: center; margin: -10px 0 8px; }
+.field--full, .appt__submit { grid-column: 1 / -1; }
+.appt__done { display: grid; gap: 14px; justify-items: center; text-align: center; }
+.appt__done .serif { font-size: 1.8rem; }
+@media (max-width: 520px) { .appt__form { grid-template-columns: 1fr; } }
