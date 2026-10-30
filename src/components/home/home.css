@@ -15,10 +15,27 @@
   gap: 18px;
 }
 .hero__content h1 { max-width: 11ch; }
+/* Mobile: photo on top, text in its own area underneath, so the
+   heading never covers the jewelry. */
 @media (max-width: 767px) {
-  .hero { min-height: 560px; }
-  .hero__media .media__art { transform: translateY(-30%); width: 62%; }
-  .hero__content { justify-items: center; text-align: center; }
+  .hero {
+    display: block;
+    min-height: 0;
+  }
+  .hero__media {
+    position: relative;
+    inset: auto;
+    height: min(100vw, 520px);
+  }
+  .hero__media img { object-position: 78% center; }
+  .hero__media .media__art { transform: none; width: 50%; }
+  .hero__content {
+    justify-items: center;
+    text-align: center;
+    gap: 14px;
+    padding-block: 32px 40px;
+  }
+  .hero__content h1 { font-size: clamp(2.2rem, 9vw, 2.8rem); }
 }
 
 /* ── Trust bar ────────────────────────────────────────── */
